@@ -13,3 +13,21 @@ body {
 //         @apply px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded;
 //     }
 // }
+
+@layer components {
+    .container_card {
+        @apply p-10;
+        .card {
+            @apply max-w-sm rounded overflow-hidden shadow-lg;
+            img {
+                @apply w-full;
+            }
+            .content {
+                @apply px-6 py-4;
+            }
+            .txt {
+                @apply font-bold text-xl mb-2 text-center;
+            }
+        }   
+    }
+}

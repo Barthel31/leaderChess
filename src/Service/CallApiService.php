@@ -17,6 +17,15 @@ class CallApiService
     {
         $response = $this->client->request(
             'GET',
+            'https://api.chess.com/pub/player/La_taupe'
+        );
+        return $response->toArray();
+    }
+
+    public function getStatisticPlayer(): array
+    {
+        $response = $this->client->request(
+            'GET',
             'https://api.chess.com/pub/player/La_taupe/stats'
         );
         return $response->toArray();
