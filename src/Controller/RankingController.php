@@ -7,15 +7,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class TestController extends AbstractController
+class RankingController extends AbstractController
 {
     /**
-     * @Route("/test", name="test")
+     * @Route("/ranking", name="ranking")
      */
     public function index(CallApiService $callApiService): Response
     {
-        return $this->render('test/index.html.twig', [
-            'controller_name' => 'TestController',
+        return $this->render('ranking/index.html.twig', [
+            'player' => $callApiService->getPlayer(),
+            'playerStatistic' => $callApiService->getStatisticPlayer(),
         ]);
     }
 }
