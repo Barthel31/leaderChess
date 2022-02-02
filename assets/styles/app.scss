@@ -1,0 +1,15 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+$body: #FAFAFA;
+
+body {
+    background-color: $body;
+}
+
+// @layer components {
+//     .btn {
+//         @apply px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded;
+//     }
+// }
