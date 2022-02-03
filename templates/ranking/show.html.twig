@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil individuel{% endblock %}
+
+{% block body %}
+    <pre>
+        {{ dump(player) }}
+    </pre>
+    <div class='container_individual'>
+        <div class='card_individual'>
+            <div class='card_avatar'>
+                <img src={{ player.0.avatar }} alt="">
+            </div>
+            <div class='card_avatar'>
+                <div>Pseudo : {{ player.0.username }}</div>
+            </div>
+            <div class='card_stat1'>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class='card_stat2'>                
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
