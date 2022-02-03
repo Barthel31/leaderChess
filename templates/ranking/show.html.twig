@@ -2,30 +2,37 @@
 
 {% block title %}Profil individuel{% endblock %}
 
-{% block body %}
-    <pre>
-        {{ dump(player) }}
-    </pre>
+{% block body %} 
     <div class='container_individual'>
-        <div class='card_individual'>
-            <div class='card_avatar'>
-                <img src={{ player.0.avatar }} alt="">
+    <h1 class='text-center my-6'>Statistiques individuelles</h1>
+        {% for individual in player %}
+            <h2 class='text-center my-6'>{{ individual.0.username }}</h2>
+            <div class='card_individual'>
+                <div class='card_avatar'>
+                    <img src={{ individual.0.avatar }} alt="avatar">
+                </div>
+                <div class='card_stats'>
+                    <div class='title'>Points mode Blitz : {{ individual.1.chess_blitz.last.rating }}</div>
+                    <div><u>Total victoire :</u> {{ individual.1.chess_blitz.record.win }}</div>
+                    <div><u>Total nul :</u> {{ individual.1.chess_blitz.record.draw }}</div>
+                    <div><u>Total défaite :</u> {{ individual.1.chess_blitz.record.loss }}</div>
+                    <div><u>Score le plus haut :</u> {{ individual.1.chess_blitz.best.rating }}</div>
+                </div>
+                <div class='card_stats'>                
+                    <div class='title'>Points mode Classic : {{ individual.1.chess_rapid.last.rating }}</div>
+                    <div><u>Total victoire :</u> {{ individual.1.chess_rapid.record.win }}</div>
+                    <div><u>Total nul :</u> {{ individual.1.chess_rapid.record.draw }}</div>
+                    <div><u>Total défaite :</u> {{ individual.1.chess_rapid.record.loss }}</div>
+                    <div><u>Score le plus haut :</u> {{ individual.1.chess_rapid.best.rating }}</div>
+                </div>
+                <div class='card_stats'>                
+                    <div class='title'>Points mode Bullet : {{ individual.1.chess_bullet.last.rating }}</div>
+                    <div><u>Total victoire :</u> {{ individual.1.chess_bullet.record.win }}</div>
+                    <div><u>Total nul :</u> {{ individual.1.chess_bullet.record.draw }}</div>
+                    <div><u>Total défaite :</u> {{ individual.1.chess_bullet.record.loss }}</div>
+                    <div><u>Score le plus haut :</u> {{ individual.1.chess_bullet.best.rating }}</div>
+                </div>
             </div>
-            <div class='card_avatar'>
-                <div>Pseudo : {{ player.0.username }}</div>
-            </div>
-            <div class='card_stat1'>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class='card_stat2'>                
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
+        {% endfor %}
+    </div> 
 {% endblock %}

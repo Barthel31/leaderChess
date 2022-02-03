@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comment index{% endblock %}
+
+{% block body %}
+    <h1 class='text-center'>Mur de la taille...ou des felicitations :-)</h1>
+        {% for comment in comments %}
+            <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+                <div>
+                    <div class="text-xl font-medium text-black">ChitChat</div>
+                    <p class="text-slate-500">{{ comment.message }}</p>
+                </div>
+            </div>
+        {% else %}
+            <div>
+                <div>Pas de messages pour le moment, soyez le premier !</div>
+            </div>
+        {% endfor %}
+ 
+
+    <a href="{{ path('comment_new') }}">Create new</a>
+{% endblock %}
