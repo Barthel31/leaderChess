@@ -3,22 +3,23 @@
 namespace App\Service;
 
 use App\Repository\PlayerRepository;
+use App\Repository\UserRepository;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class CallApiService
 {
     private HttpClientInterface $client;
-    private PlayerRepository $playerRepository;
+    private UserRepository $userRepository;
 
-    public function __construct(HttpClientInterface $client, PlayerRepository $playerRepository)
+    public function __construct(HttpClientInterface $client, UserRepository $userRepository)
     {
         $this->client = $client;
-        $this->playerRepository = $playerRepository;
+        $this->userRepository = $userRepository;
     }
     
     public function getPlayers(): array
     {
-        $players = $this->playerRepository->findAll();
+        $players = $this->userRepository->findAll();
         $nicknames = [];
         for ($i = 0; $i < count($players); $i++) {
             $nicknames[] = $players[$i]->getNickname();
