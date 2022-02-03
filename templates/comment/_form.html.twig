@@ -1,4 +1,25 @@
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class='container_form'>
+    <div class='form'>
+        <div class='label'>
+            {{ form_label(form.message) }}
+        </div>
+        <div class='input' id='form_message'>
+            {{ form_widget(form.message) }}
+        </div>
+        <div class='form_spy' >
+            {{ form_label(form.createdAt) }}
+        </div>
+        <div class='form_spy'>
+            {{ form_widget(form.createdAt) }}
+        </div>
+        <button class="btn mb-4 mt-5 ">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+    
+    
+</div>
 {{ form_end(form) }}
+
+    
+
