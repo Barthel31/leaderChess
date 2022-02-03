@@ -9,15 +9,28 @@
     {% endif %}
 
     <form action="{{ path('login') }}" method="post">
-        <label for="username">Pseudo :</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="_password"/>
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-        
-        <input type="hidden" name="_target_path" value="/ranking"/>
-
-        <button type="submit">Connection</button>
+        <div class='container_form'>
+            <div class="form">
+                <div class="mb-4">
+                    <label class="label" for="username">
+                        Pseudo :
+                    </label>
+                    <input class="input" id="username" type="text" name="_username" placeholder="Pseudo" value="{{ last_username }}">
+                </div>
+                <div class="mb-6">
+                    <label class="label" for="password">
+                        Mot de passe :
+                    </label>
+                    <input class="input border-red mb-3" id="password" type="password" name="_password" placeholder="******">
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <input type="hidden" name="_target_path" value="/ranking"/>
+                <div class="flex items-center justify-between">
+                    <button class="btn" type="submit">
+                        Se connecter
+                    </button>
+                </div>
+            </div>
+        </div>
     </form>
 {% endblock %}
