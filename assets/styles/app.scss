@@ -6,17 +6,18 @@ $body: #FAFAFA;
 
 body {
     background-color: $body;
-}
+    h1 {
+        font-size: 5rem;
+    }
 
-// @layer components {
-//     .btn {
-//         @apply px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded;
-//     }
-// }
+    h2 {
+        font-size: 4rem;
+    }
+}
 
 @layer components {
     .container_card {
-        @apply p-10;
+        @apply p-10 w-1/3;
         .card {
             @apply max-w-sm rounded overflow-hidden shadow-lg;
             img {
@@ -29,5 +30,25 @@ body {
                 @apply font-bold text-xl mb-2 text-center;
             }
         }   
+    }
+
+    .btn {
+        @apply px-4 py-2 w-40 bg-blue-500 hover:bg-blue-600 text-white rounded shadow-md;
+    }
+
+    .card_individual {
+        @apply flex content-center flex-row rounded overflow-hidden shadow-lg w-5/6;
+        .card_avatar {
+            @apply w-2/6 items-center;
+        }
+        .card_stats {
+            @apply w-2/6;
+            .title {
+                @apply font-bold text-xl py-4;
+            }
+            div {
+                @apply text-xl py-3;
+            }
+        }
     }
 }

@@ -1,24 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RankingController!{% endblock %}
+{% block title %}Classement des joueurs{% endblock %}
 
 {% block body %}
 <div class='container_ranking'>
-    <h1 class='text-2xl text-center'>Classement des joueurs</h1>
-    <div class='container_filterRanking text-xl flex flex-row justify-around'>
+    <h1 class='text-center my-6'>Classement des joueurs</h1>
+    <div class='container_filterRanking text-xl flex flex-row justify-around my-6'>
         <a class='btn-large' href="#filtreBlitz">Classement Blitz</a>
         <a class='btn-large' href="#filtreClassic">Classement Classic</a>
         <a class='btn-large' href="#filtreBullet">Classement Bullet</a>
         <a class='btn-large' href="#filtreEnDifféré">Classement En différé</a>
     </div>
-    <div class="container_card">  
-        <div class="card">
-            <img src="{{ player.avatar }}" alt="avatar">
-            <div class="content">
-                <div class="txt">Pseudo : {{ player.username }}</div>
-                <div class="txt">Score : {{ playerStatistic.chess_blitz.last.rating }}</div>
+    <div class='container_cards flex flex-row flex-wrap'>
+        {% for player in players|sort((a, b) => b.1.chess_blitz.last.rating <=> a.1.chess_blitz.last.rating) %}
+            <div class="container_card">  
+                <div class="card">
+                    <img src={{ player.0.avatar }} alt="avatar">
+                    <div class="content flex flex-col">
+                        <div class="txt my-4 justify-center">Pseudo : {{ player.0.username }}</div>
+                        <div class="txt my-4 justify-center">Score : {{ player.1.chess_blitz.last.rating }}</div>
+                        <button class='btn my-4 justify-center'>
+                            <a href="{{ path("ranking_show", { nickname: player.0.username }) }}">Voir le profil</a>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        {% endfor %}
+    </div> 
 </div>
 {% endblock %}
