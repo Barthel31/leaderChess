@@ -11,7 +11,7 @@
 		</div>
 		<div class="order-2 md:order-3">
 			{% if app.user %}
-				{{ app.user.nickname }}
+				<div class='text-white'>{{ app.user.nickname }}</div>
 					<a href={{ path('app_logout') }}>
 						<button class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-gray-50 rounded-xl flex items-center gap-2">
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
