@@ -96,4 +96,14 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    /**
+     * @Route("/new/request", name="user_request")
+     */
+    public function requestUser(): Response
+    {
+        return $this->render('user/request.html.twig', [
+
+        ]);
+    }
 }

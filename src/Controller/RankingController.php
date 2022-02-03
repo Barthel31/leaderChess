@@ -23,7 +23,7 @@ class RankingController extends AbstractController
     }
 
     /**
-     * @Route("/{nickname}", name="show")
+     * @Route("/individual/{nickname}", name="show")
      */
     public function playerProfil(string $nickname, CallApiService $callApiService): Response
     {   
