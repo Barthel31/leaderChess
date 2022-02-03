@@ -13,11 +13,31 @@ use Symfony\Component\Routing\Annotation\Route;
 class RankingController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="blitz")
      */
-    public function index(CallApiService $callApiService): Response
+    public function rankingBlitz(CallApiService $callApiService): Response
     {
         return $this->render('ranking/index.html.twig', [
+            'players' => $callApiService->getPlayers(),
+        ]);
+    }
+
+    /**
+     * @Route("/bullet", name="bullet")
+     */
+    public function rankingBullet(CallApiService $callApiService): Response
+    {
+        return $this->render('ranking/bullet.html.twig', [
+            'players' => $callApiService->getPlayers(),
+        ]);
+    }
+
+    /**
+     * @Route("/rapid", name="rapid")
+     */
+    public function rankingRapid(CallApiService $callApiService): Response
+    {
+        return $this->render('ranking/rapid.html.twig', [
             'players' => $callApiService->getPlayers(),
         ]);
     }

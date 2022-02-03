@@ -9,7 +9,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserFixtures extends Fixture
 {
-    private array $usernames = ['and31', 'kassoul31', 'Armand2009', 'TomLdc', 'steven31270', 'Simonus_le_grand'];
+    private array $usernames = ['and31', 'kassoul31', 'Armand2009', 'steven31270', 'Simonus_le_grand'];
 
     private UserPasswordHasherInterface $passwordHasher;
 
@@ -35,7 +35,7 @@ class UserFixtures extends Fixture
         }
 
         $user = new User();
-        $user->setNickname('bibekpandit98');
+        $user->setNickname('Ahmedzidanamz');
         $user->setPassword($this->passwordHasher->hashPassword($user, '123'));
         $user->setRoles(['ROLE_USER']);
         $manager->persist($user);

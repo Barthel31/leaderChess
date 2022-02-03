@@ -98,11 +98,11 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/new/request", name="user_request")
+     * @Route("/new/userForm", name="user_form")
      */
     public function requestUser(): Response
     {
-        return $this->render('user/request.html.twig', [
+        return $this->render('user/userForm.html.twig', [
 
         ]);
     }
