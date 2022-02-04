@@ -16,9 +16,9 @@
                 <div class="card">
                     <img src={{ player.0.avatar }} alt="avatar">
                     <div class="content flex flex-col">
-                        <div class="txt my-4 justify-center">Pseudo : {{ player.0.username }}</div>
+                        <div class="txt my-4 justify-center">Pseudo : {{ player.0.username|capitalize }}</div>
                         <div class="txt my-4 justify-center">Score : {{ player.1.chess_bullet.last.rating }}</div>
-                        <button class='btn my-4 justify-center'>
+                        <button class='btn my-4 justify-center ml-24'>
                             <a href="{{ path("ranking_show", { nickname: player.0.username }) }}">Voir le profil</a>
                         </button>
                     </div>
