@@ -3,10 +3,10 @@
 {% block title %}Profil individuel{% endblock %}
 
 {% block body %} 
-    <div class='container_individual'>
+    <div class='container_individual flex flex-col items-center'>
     <h1 class='text-center my-6'>Statistiques individuelles</h1>
         {% for individual in player %}
-            <h2 class='text-center my-6'>{{ individual.0.username }}</h2>
+            <h2 class='text-center my-6'>{{ individual.0.username|capitalize }}</h2>
             <div class='card_individual'>
                 <div class='card_avatar'>
                     <img src={{ individual.0.avatar }} alt="avatar">

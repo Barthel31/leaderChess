@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/ranking", name="ranking_")
+ * @Route("/", name="ranking_")
  */
 class RankingController extends AbstractController
 {
