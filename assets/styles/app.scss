@@ -7,20 +7,20 @@ $body: #FAFAFA;
 body {
     background-color: $body;
     h1 {
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
     h2 {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 }
 
-#comment_message {
+#comment_message, #contact_pseudo, #contact_prenom, #contact_email {
     width: 100%;
     border: none;
 }
 
-.form_spy {
+.form_spy, #contact_envoyer {
     display: none;
 }
 
