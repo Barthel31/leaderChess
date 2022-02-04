@@ -3,6 +3,11 @@
 {% block title %}Classement des joueurs-blitz{% endblock %}
 
 {% block body %}
+{% for message in app.flashes('succes') %}
+    <div class="flash-notice">
+        {{ message }}
+    </div>
+{% endfor %}
 <div class='container_ranking'>
     <h1 class='text-center my-6'>Classement des joueurs</h1>
     <div class='container_filterRanking text-xl flex flex-row justify-around my-6'>
